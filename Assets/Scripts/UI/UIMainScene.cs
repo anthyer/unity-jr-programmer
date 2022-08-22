@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[DefaultExecutionOrder(1000)]
 public class UIMainScene : MonoBehaviour
 {
     public static UIMainScene Instance { get; private set; }
@@ -72,5 +73,10 @@ public class UIMainScene : MonoBehaviour
             m_CurrentContent = content;
             InfoPopup.Name.text = content.GetName();
         }
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
